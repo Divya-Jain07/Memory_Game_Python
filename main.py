@@ -49,10 +49,13 @@ def inputs(n,display):
     
 #to check the index eligibility
 def condition(index,n,display):
-    if not(index.isdigit()):
-        print("Not a number. Try again.")
-    else:
+    try:
         index=int(index)
+    except:
+        print("Not a number. Try again.")
+    # if not(index.isdigit()):
+    #     print("Not a number. Try again.")
+    else:
         if not(index>=0 and index<=n-1):
             print("Invalid Index. Try again.")            
         elif not(display[index]=='*'):
